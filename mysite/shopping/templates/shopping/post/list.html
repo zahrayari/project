@@ -9,5 +9,7 @@
 <p class="date">
     Published {{ post.publish }} by {{ post.author }}
 </p>
-<hr> {{ post.body|truncatewords:30|linebreaks }}
+<hr>
+<h6>visits:<b><i>{{post.visits}}</i></b></h6>
+{{ post.body|truncatewords:30|linebreaks }}
 <hr> {% endfor %} {% include "pagination.html" with page=posts %} {% endblock %}

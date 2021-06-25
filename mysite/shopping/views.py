@@ -34,6 +34,8 @@ def post_detail(request, year, month, day, post):
             publish__year=year,
             publish__month=month,
             publish__day=day)
+    post.visits = post.visits + 1
+    post.save()
     return render(request,
     'shopping/post/detail.html',
     {'post': post})

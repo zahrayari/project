@@ -21,8 +21,9 @@ class Post(models.Model):
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=10,
-    choices=STATUS_CHOICES,default='draft')
+    status = models.CharField(max_length=10,choices=STATUS_CHOICES,default='draft')
+    visits=models.PositiveIntegerField(default=0)
+    Summary=models.TextField(default="",max_length=500)
 
     class Meta:
           ordering = ('-publish',)
